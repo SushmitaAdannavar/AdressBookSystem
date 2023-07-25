@@ -14,8 +14,9 @@ namespace AdressbookSystem
             int ch =Convert.ToInt32(Console.ReadLine());
             switch (ch)
             {
-                case 1:Manage mg = new Manage();
-                      mg.CreateContact();
+                case 1:Console.WriteLine("Add contact");
+                    Manage mg = new Manage();
+                    mg.CreateContact();
                        break;
                 case 2:Console.WriteLine("Edit existing contact");
                        break;
