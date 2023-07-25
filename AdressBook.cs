@@ -6,7 +6,6 @@ namespace AdressbookSystem
 {
     public class AdressBook
     {
-       // List<AdressBook> details = new List<AdressBook>();
         public string FirstName
         {get;set;}
         public string LastName
