@@ -15,7 +15,7 @@ namespace AdressbookSystem
         {   while (true)
             {
                 Console.WriteLine("Enter the value");
-                Console.WriteLine("1.Add contact to adressbook 2.Edit existing contact 3.Delete contact 4.Add multiple contacts ");
+                Console.WriteLine("1.Add contact to adressbook 2.Edit existing contact 3.Delete contact 4.Add multiple contacts 5.End of program");
                 int ch = Convert.ToInt32(Console.ReadLine());
                 switch (ch)
                 {
@@ -27,8 +27,8 @@ namespace AdressbookSystem
                         Console.WriteLine("Edit existing contact");
                         Manage.UpdateContact();
                         break;
-                    case 3:
-                        Console.WriteLine("Delete contact");
+                    case 3:Console.WriteLine("Delete contact");
+                        Manage.DeleteContact();
                         break;
                     case 4:
                         Console.WriteLine("Add multiple contacts");
