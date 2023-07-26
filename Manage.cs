@@ -30,10 +30,11 @@ namespace AdressbookSystem
             Console.WriteLine("Enter phonenum:");
             person.phonenum = Console.ReadLine();
             People.Add(person);
-            PrintPerson(person);
+            PrintPeople();
         }
-        public static void PrintPerson(Person person)
+        public static void PrintPeople()
         {
+            foreach(var person in People)
             Console.WriteLine(person.FirstName + " " + person.LastName + " " + person.adress + " " +person.city + " " + person.state + " " + person.zipcode + " " + person.phonenum);
         }
         public static void UpdateContact()
@@ -52,8 +53,16 @@ namespace AdressbookSystem
             else if (userOption == "zipcode") { foreach (var value in updated) { value.zipcode = newdata; } }
             else if (userOption == "phonenum") { foreach (var value in updated) { value.phonenum = newdata; } }
             else { Console.WriteLine("Invalid input"); }
-            foreach(var value in updated) { Console.WriteLine(value.FirstName + " " + value.LastName + " " + value.adress + " " + value.city + " " + value.state + " " + value.zipcode + " " + value.phonenum); }
+            PrintPeople();
             
         }  
+        public static void DeleteContact()
+        {
+            Console.WriteLine("Enter the first name of the person you would like to remove.");
+            string firstName = Console.ReadLine();
+            Person person1 = People.FirstOrDefault(x => x.FirstName.ToLower() == firstName.ToLower());
+            People.Remove(person1);
+            PrintPeople();
+        }
     }
 }
